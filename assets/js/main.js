@@ -6,7 +6,6 @@ function escutaInput(input){
     input.addEventListener('input', function(){
         let verifica = input.value / 2;
         if(Number.isNaN(verifica)){
-            alert('Digite um valor válido')
             input.value = ''
         }
     })
@@ -28,16 +27,16 @@ if(escutaInput(peso)){
         function categoria (imcCalculado){
             if(imcCalculado <= 18.5 && imcCalculado > 10){
                 msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está abaixo do peso`
-            } else if(imcCalculado >= 18.5 && imcCalculado < 24.9){
+            } else if(imcCalculado >= 18.5 && imcCalculado < 25){
                 msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com peso normal`
             } else if(imcCalculado >= 25 && imcCalculado <= 29.9){
                 msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com sobrepeso`
             } else if(imcCalculado >= 30 && imcCalculado <= 34.9){
-                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com sobrepso`
+                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com Obesidade grau 1`
             } else if(imcCalculado >= 35 && imcCalculado <= 39.9){
-                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com sobrepso`
+                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com Obesidade grau 2`
             } else if(imcCalculado >= 40 && imcCalculado < 80){
-                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com sobrepso`
+                msg.innerHTML = `Seu IMC é ${imcCalculado.toFixed(2)} e você está com Obesidade grau 3`
             } else {
                 msg.innerHTML = `Digite valores válidos`
             }
@@ -57,10 +56,12 @@ if(escutaInput(peso)){
         } 
         else {
             categoria(imcCalculado)
+            console.log(imcCalculado)
         }
         
     }
 }
+
 
 
 
